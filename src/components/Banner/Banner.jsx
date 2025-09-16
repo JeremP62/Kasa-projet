@@ -5,7 +5,7 @@ import defaultBanner from "./banner-home.png";
 export default function Banner({
   image = defaultBanner,
   text = "Chez vous, partout et ailleurs",
-  position = "",
+  position = "center 50%",
 }) {
   return (
     <section

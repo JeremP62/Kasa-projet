@@ -1,10 +1,32 @@
 /* src/pages/Home/Home.scss */
-.home__grid {
+
+/* zone centrée alignée avec la maquette (1240px) */
+.home {
   max-width: 1240px;
   margin: 24px auto;
-  padding: 0 16px;
+  padding: 0 16px;     /* un peu d’air sur petits écrans */
+}
+
+/* le “cadre” gris derrière les cards */
+.home__panel {
+  background: #f6f6f6;
+  border-radius: 25px;
+  padding: 32px;       /* marge intérieure */
+}
+
+/* la grille des cards */
+.home__grid {
   display: grid;
   gap: 24px;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* responsive */
+@media (max-width: 1024px) {
+  .home__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .home__panel { padding: 16px; border-radius: 10px; }
+  .home__grid  { grid-template-columns: 1fr; }
 }
 
