@@ -1,0 +1,9 @@
+/* src/pages/Home/Home.scss */
+.home__grid {
+  max-width: 1240px;
+  margin: 24px auto;
+  padding: 0 16px;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}/*# sourceMappingURL=Home.css.map */

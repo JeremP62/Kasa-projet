@@ -1,0 +1,50 @@
+$primary: #ff6060;
+
+.header {
+  max-width: 1240px;
+  margin: 40px auto 40px;
+  padding: 0 16px;              
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__brand img {
+  display: block;
+  height: 68px;                  
+  width: auto;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 57px;                    
+}
+
+.header__nav a {
+  color: #000;
+  text-decoration: none;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.header__nav a.active {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  color: #000;                   
+}
+
+@media (max-width: 768px) {
+  .header {
+    margin-top: 20px;
+  }
+  .header__brand img {
+    height: 40px;
+  }
+  .header__nav {
+    gap: 24px;
+  }
+  .header__nav a {
+    font-size: 16px;
+  }
+}

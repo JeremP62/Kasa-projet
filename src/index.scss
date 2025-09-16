@@ -1,14 +1,19 @@
-@charset "UTF-8";
 /* src/index.scss */
+
 /* === Variables === */
+$primary: #646cff;
+$text: #222;
+$bg: #ffffff;
+
 /* === Racine / reset léger === */
 :root {
-  color-scheme: light;
+  color-scheme: light; // force le thème clair
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: #222;
-  background-color: #ffffff;
+  color: $text;
+  background-color: $bg;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -20,6 +25,7 @@ html, body, #root {
 }
 
 body {
+
   margin-left: 20px;
   margin-right: 20px;
   min-width: 320px;
@@ -30,11 +36,13 @@ body {
 /* === Liens === */
 a {
   font-weight: 500;
-  color: #646cff;
+  color: $primary;
   text-decoration: inherit;
-}
-a:hover {
-  color: rgb(64.3, 74.1425806452, 255);
+
+  &:hover {
+    // léger assombrissement
+    color: darken($primary, 7%);
+  }
 }
 
 /* === Titres === */
@@ -54,10 +62,14 @@ button {
   background-color: #f9f9f9;
   cursor: pointer;
   transition: border-color 0.25s;
+
+  &:hover {
+    border-color: $primary;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus, button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}/*# sourceMappingURL=index.css.map */
+
