@@ -1,7 +1,7 @@
 // src/App.jsx
 import { Outlet } from "react-router-dom";
-import Header from "./components/Header/Header";
-
+import Header from "./components/Header/Header.jsx";
+import Footer from "./components/Footer/footer.jsx";
 
 export default function App() {
   return (
@@ -10,10 +10,11 @@ export default function App() {
       <main>
         <Outlet />
       </main>
-      <footer>© Kasa 2025</footer>
+      <Footer />
     </>
   );
 }
+
 
 
 
