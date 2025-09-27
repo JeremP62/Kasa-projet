@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <>
-      <Banner text="Chez vous, partout et ailleurs" />
+      <Banner/>
       <section className="home">
         <div className="home__panel">         {/* 👈 le cadre gris */}
           <div className="home__grid">
