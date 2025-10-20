@@ -1,0 +1,57 @@
+@charset "UTF-8";
+/* PAGE ENTIÈRE */
+.about-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centre tout */
+  gap: 28px;
+  margin-bottom: 60px;
+}
+
+/* ✅ Bannière — pleine largeur (limitée à 1240px) */
+.about-banner {
+  position: relative;
+  width: 100%;
+  max-width: 1240px; /* largeur maquette */
+  height: 223px;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.about-banner img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+
+.about-banner::after {
+  position: absolute;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+}
+
+/* ✅ Zone des collapses — plus étroite */
+.about-collapses {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  width: 100%;
+  max-width: 1023px; /* plus petit que la bannière */
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-banner {
+    height: 180px;
+    border-radius: 10px;
+  }
+  .about-collapses {
+    max-width: 90%;
+  }
+}/*# sourceMappingURL=about.css.map */

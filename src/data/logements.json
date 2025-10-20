@@ -1,0 +1,9 @@
+[
+  {
+    "id": "a1",
+    "title": "Appartement cosy",
+    "location": "Paris, France",
+    "host": { "name": "Jean Dupont", "picture": "/images/jean.jpg" },
+    "pictures": ["/images/appart1.jpg"]
+  }
+]

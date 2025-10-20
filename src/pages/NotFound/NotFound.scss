@@ -1,0 +1,12 @@
+/* src/pages/NotFound/NotFound.css */
+.notfound {
+  min-height: 60vh;
+  display: grid;
+  place-items: center;
+  gap: 16px;
+  text-align: center;
+  padding: 40px 16px;
+}
+.notfound__code { font-size: clamp(96px, 20vw, 200px); color: #ff6060; margin: 0; }
+.notfound__text { font-size: 18px; margin: 0; }
+.notfound__link { color: #000; text-decoration: underline; }

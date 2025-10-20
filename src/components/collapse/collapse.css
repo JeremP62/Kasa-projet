@@ -1,0 +1,53 @@
+@charset "UTF-8";
+.collapse {
+  border-radius: 12px;
+  background: transparent;
+  overflow: hidden;
+}
+
+/* --- HEADER --- */
+.collapse__header {
+  background: #ff6060;
+  color: #fff;
+  border: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+/* --- CONTENU --- */
+.collapse__content {
+  max-height: 0;
+  overflow: hidden;
+  background: rgba(246, 246, 246, 0.4509803922); /* gris transparent */
+  border-radius: 0 0 12px 12px; /* coins du bas seulement */
+  margin-top: 0;
+  border-top: 0;
+  box-shadow: none;
+  padding: 0; /* pas de padding ici */
+}
+
+/* le vrai padding est à l’intérieur */
+.collapse__inner {
+  padding: 1rem 1rem 1.1rem;
+  color: #000; /* texte noir à l'intérieur */
+}
+
+/* flèche qui tourne */
+.collapse.is-open .collapse__chevron {
+  transform: rotate(180deg);
+}
+
+.collapse__header,
+.collapse__header:focus,
+.collapse__header:focus-visible,
+.collapse__header:active {
+  outline: none !important;
+  box-shadow: none !important;
+}/*# sourceMappingURL=collapse.css.map */
