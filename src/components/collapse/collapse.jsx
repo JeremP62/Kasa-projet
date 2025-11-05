@@ -7,6 +7,7 @@ export default function Collapse({
   defaultOpen = false,
   onToggle,             // optionnel: (isOpen:boolean) => void
   className = ""
+  
 }) {
   const [open, setOpen] = useState(defaultOpen);
   const contentRef = useRef(null);

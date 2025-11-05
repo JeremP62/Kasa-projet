@@ -5,12 +5,12 @@ import bannerAbout from "../../assets/about-banner.png";
 export default function About() {
   return (
     <div className="about-page">
-      {/* ✅ Bannière pleine largeur */}
+     
       <div className="about-banner">
         <img src={bannerAbout} alt="Montagnes enneigées" />
       </div>
 
-      {/* ✅ Zone centrée + plus étroite pour les collapses */}
+      
       <div className="about-collapses">
         <Collapse title="Fiabilité">
           <p>Les annonces postées sur Kasa garantissent une fiabilité totale...</p>

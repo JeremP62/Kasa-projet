@@ -1,6 +1,7 @@
 // src/components/Banner/Banner.jsx
 import "./Banner.scss";
-import defaultBanner from "./banner-home.png";
+import defaultBanner from "../../assets/banner-home.png";
+
 
 export default function Banner({
   image = defaultBanner,
