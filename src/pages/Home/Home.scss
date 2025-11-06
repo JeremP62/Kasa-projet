@@ -1,20 +1,17 @@
 /* src/pages/Home/Home.scss */
 
-/* zone centrée alignée avec la maquette (1240px) */
 .home {
   max-width: 1240px;
   margin: 24px auto;
-  padding: 0 16px;     /* un peu d’air sur petits écrans */
+  padding: 0 16px; 
 }
 
-/* le “cadre” gris derrière les cards */
 .home__panel {
   background: #f6f6f6;
   border-radius: 25px;
-  padding: 32px;       /* marge intérieure */
+  padding: 32px;
 }
 
-/* la grille des cards */
 .home__grid {
   display: grid;
   gap: 24px;

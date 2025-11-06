@@ -110,9 +110,9 @@
     cursor: pointer;
     position: relative;
   }
-  // flèche qui pivote via <details> natif
+  
   &[open] > .collapse__head::after { transform: rotate(180deg); }
-  &__head::marker { display: none; }          // supprime le triangle par défaut (support navigateur variable)
+  &__head::marker { display: none; }
   &__head::after {
     content: "⌄";
     position: absolute;

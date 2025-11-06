@@ -1,5 +1,4 @@
 // src/pages/Home/Home.jsx
-console.log("HOME RENDUE OK"); 
 import { useEffect, useState } from "react";
 import { getAllLogements } from "../../services/api";
 import Banner from "../../components/Banner/Banner";

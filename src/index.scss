@@ -1,29 +1,19 @@
 /* src/index.scss */
-
-/* === Variables === */
 $primary: #646cff;
 $text: #222;
 $bg: #ffffff;
 
-/* === Racine / reset léger === */
 :root {
   color-scheme: light; // force le thème clair
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: $text;
-  background-color: $bg;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 html, body, #root {
   height: 100%;
   margin: 0;
-  padding: 0;
+  padding: 0; 
 }
 
 .app-shell {
@@ -33,18 +23,16 @@ html, body, #root {
   padding-bottom: 0 !important;
 }
 
-/* 2) Le contenu occupe l'espace restant */
 .app-shell > main {
   flex: 1;
 }
 
 body {
-  margin-left: 20px;
-  margin-right: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   min-width: 320px; 
 }
 
-/* === Liens === */
 a {
   font-weight: 500;
   color: $primary;
@@ -56,13 +44,11 @@ a {
   }
 }
 
-/* === Titres === */
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
 
-/* === Boutons === */
 button {
   border-radius: 8px;
   border: 1px solid transparent;

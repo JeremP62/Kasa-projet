@@ -1,11 +1,9 @@
-@charset "UTF-8";
 .collapse {
   border-radius: 12px;
   background: transparent;
   overflow: hidden;
 }
 
-/* --- HEADER --- */
 .collapse__header {
   background: #ff6060;
   color: #fff;
@@ -21,25 +19,22 @@
   cursor: pointer;
 }
 
-/* --- CONTENU --- */
 .collapse__content {
   max-height: 0;
   overflow: hidden;
-  background: rgba(246, 246, 246, 0.4509803922); /* gris transparent */
-  border-radius: 0 0 12px 12px; /* coins du bas seulement */
+  background: rgba(246, 246, 246, 0.4509803922);
+  border-radius: 0 0 12px 12px;
   margin-top: 0;
   border-top: 0;
   box-shadow: none;
-  padding: 0; /* pas de padding ici */
+  padding: 0;
 }
 
-/* le vrai padding est à l’intérieur */
 .collapse__inner {
   padding: 1rem 1rem 1.1rem;
-  color: #000; /* texte noir à l'intérieur */
+  color: #000;
 }
 
-/* flèche qui tourne */
 .collapse.is-open .collapse__chevron {
   transform: rotate(180deg);
 }

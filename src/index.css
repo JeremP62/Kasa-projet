@@ -1,18 +1,9 @@
-@charset "UTF-8";
 /* src/index.scss */
-/* === Variables === */
-/* === Racine / reset léger === */
 :root {
   color-scheme: light;
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: #222;
-  background-color: #ffffff;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 html, body, #root {
@@ -28,18 +19,16 @@ html, body, #root {
   padding-bottom: 0 !important;
 }
 
-/* 2) Le contenu occupe l'espace restant */
 .app-shell > main {
   flex: 1;
 }
 
 body {
-  margin-left: 20px;
-  margin-right: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   min-width: 320px;
 }
 
-/* === Liens === */
 a {
   font-weight: 500;
   color: #646cff;
@@ -49,13 +38,11 @@ a:hover {
   color: rgb(64.3, 74.1425806452, 255);
 }
 
-/* === Titres === */
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
 
-/* === Boutons === */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
