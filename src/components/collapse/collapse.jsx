@@ -1,69 +1,41 @@
+// src/components/Collapse/Collapse.jsx
 import { useEffect, useId, useRef, useState } from "react";
-import "./collapse.scss";
+import "./Collapse.scss";
 
-export default function Collapse({
-  title,
-  children,
-  defaultOpen = false,
-  onToggle,             // optionnel: (isOpen:boolean) => void
-  className = ""
-  
-}) {
+export default function Collapse({ title, children, defaultOpen = false, className = "" }) {
   const [open, setOpen] = useState(defaultOpen);
   const contentRef = useRef(null);
   const id = useId();
 
-  // expose le bon max-height pour une transition fluide
   useEffect(() => {
     const el = contentRef.current;
     if (!el) return;
-
-    const setMax = () => {
-      // quand ouvert, on met la hauteur scroll pour permettre la transition
-      el.style.maxHeight = open ? `${el.scrollHeight}px` : "0px";
-    };
-
-    setMax();
-    // recalcule si le contenu change de taille (responsive, fonts, etc.)
-    const ro = new ResizeObserver(setMax);
-    ro.observe(el);
-    return () => ro.disconnect();
+    el.style.maxHeight = open ? `${el.scrollHeight}px` : "0px";
   }, [open, children]);
-
-  const handleToggle = () => {
-    setOpen((o) => {
-      const next = !o;
-      onToggle?.(next);
-      return next;
-    });
-  };
 
   return (
     <div className={`collapse ${open ? "is-open" : ""} ${className}`}>
       <button
+        id={`collapse-header-${id}`}
         className="collapse__header"
-        onClick={handleToggle}
+        onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
-        aria-controls={`panel-${id}`}
+        aria-controls={`collapse-panel-${id}`}
+        type="button"
       >
         <span className="collapse__title">{title}</span>
-        <svg
-          className="collapse__chevron"
-          viewBox="0 0 24 24"
-          width="20"
-          height="20"
-          aria-hidden="true"
-        >
+        <svg className="collapse__chevron" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
           <path d="M7 10l5 5 5-5" fill="none" stroke="currentColor" strokeWidth="2" />
         </svg>
       </button>
 
       <div
-        id={`panel-${id}`}
+        id={`collapse-panel-${id}`}
         ref={contentRef}
         className="collapse__content"
         role="region"
-        aria-labelledby={`header-${id}`}
+        aria-labelledby={`collapse-header-${id}`}
+        style={{ maxHeight: defaultOpen ? "none" : "0px" }}
       >
         <div className="collapse__inner">{children}</div>
       </div>
