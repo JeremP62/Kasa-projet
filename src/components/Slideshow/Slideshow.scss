@@ -1,9 +1,14 @@
 .carousel {
   position: relative;
-  height: 415px;
+  width: 100%;  
+  max-width: 100%;     
+  display: block;
+  
   border-radius: 25px;
   overflow: hidden;
-  margin-bottom: 25px;
+  margin: 0 0 25px 0; 
+  background: #f2f2f2;
+
 
   &__img {
     width: 100%;
@@ -70,8 +75,14 @@
 }
 
 @media (max-width: 768px) {
-  .carousel {
-    height: 255px;
+   .carousel {
     border-radius: 15px;
   }
+}
+
+.carousel__img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
 }

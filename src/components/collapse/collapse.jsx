@@ -35,7 +35,8 @@ export default function Collapse({ title, children, defaultOpen = false, classNa
         className="collapse__content"
         role="region"
         aria-labelledby={`collapse-header-${id}`}
-        style={{ maxHeight: defaultOpen ? "none" : "0px" }}
+        style={{ maxHeight: open ? `${contentRef.current?.scrollHeight}px` : "0px" }}
+
       >
         <div className="collapse__inner">{children}</div>
       </div>

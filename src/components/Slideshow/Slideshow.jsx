@@ -1,10 +1,15 @@
 // src/components/Slideshow/Slideshow.jsx
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import "./Slideshow.scss";
 
 export default function Slideshow({ images = [], title = "" }) {
   const [current, setCurrent] = useState(0);
-  const total = images.length;
+  const total = images?.length ?? 0;
+
+ 
+  useEffect(() => {
+    if (current >= total) setCurrent(0);
+  }, [total, current]);
 
   const prev = useCallback(() => {
     setCurrent((i) => (i === 0 ? total - 1 : i - 1));
@@ -14,7 +19,19 @@ export default function Slideshow({ images = [], title = "" }) {
     setCurrent((i) => (i === total - 1 ? 0 : i + 1));
   }, [total]);
 
-  if (total === 0) return null;
+
+  if (total === 0) {
+    return (
+      <div
+        className="carousel carousel--empty"
+        role="region"
+        aria-roledescription="carrousel d'images"
+        aria-label={title || "Slideshow"}
+      >
+        Aucune image à afficher
+      </div>
+    );
+  }
 
   return (
     <div

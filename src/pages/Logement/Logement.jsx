@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Slideshow from "../../components/Slideshow/Slideshow";
+import Collapse from "../../components/collapse/collapse";
 import "./Logement.scss";
 
 export default function Logement() {
@@ -13,6 +14,7 @@ export default function Logement() {
       <Header />
 
       <div className="container">
+        
         <Slideshow images={logement.pictures} title={logement.title} />
 
         <div className="logement__top">
@@ -36,8 +38,11 @@ export default function Logement() {
               />
             </div>
             <div className="rating">
-              {[1,2,3,4,5].map((i) => (
-                <span key={i} className={`star ${i <= (logement.rating || 0) ? "star--full" : ""}`}>
+              {[1, 2, 3, 4, 5].map((i) => (
+                <span
+                  key={i}
+                  className={`star ${i <= Number(logement.rating || 0) ? "star--full" : ""}`}
+                >
                   ★
                 </span>
               ))}
@@ -46,19 +51,18 @@ export default function Logement() {
         </div>
 
         <div className="logement__bottom">
-          <details className="collapse" open>
-            <summary className="collapse__head">Description</summary>
-            <div className="collapse__body">{logement.description}</div>
-          </details>
+       
+          <Collapse title="Description">
+            {logement.description}
+          </Collapse>
 
-          <details className="collapse" open>
-            <summary className="collapse__head">Équipements</summary>
-            <div className="collapse__body">
-              <ul className="equip-list">
-                {logement.equipments?.map((e) => <li key={e}>{e}</li>)}
-              </ul>
-            </div>
-          </details>
+          <Collapse title="Équipements">
+            <ul className="equip-list">
+              {logement.equipments?.map((e) => (
+                <li key={e}>{e}</li>
+              ))}
+            </ul>
+          </Collapse>
         </div>
       </div>
 
