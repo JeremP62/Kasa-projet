@@ -7,6 +7,7 @@
   width: 100vw;
   margin-left: calc(50% - 50vw);
   padding-block: clamp(32px, 8vw, 100px);
+  margin-top: 15px;
 }
 
 .footer__text {

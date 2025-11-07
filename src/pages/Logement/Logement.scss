@@ -10,45 +10,6 @@
   padding: 20px;
 }
 
-.carousel {
-  position: relative;
-  height: 415px;
-  border-radius: 25px;
-  overflow: hidden;
-  margin-bottom: 25px;
-
-  &__img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  &__arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    border: 0;
-    background: transparent;
-    font-size: 56px;
-    line-height: 1;
-    padding: 0 12px;
-    cursor: pointer;
-    color: white;
-    text-shadow: 0 2px 8px rgba(0,0,0,.3);
-    &--left { left: 10px; }
-    &--right { right: 10px; }
-  }
-  &__count {
-    position: absolute;
-    left: 50%;
-    bottom: 16px;
-    transform: translateX(-50%);
-    color: white;
-    font-weight: 500;
-    text-shadow: 0 2px 8px rgba(0,0,0,.3);
-  }
-}
-
 .logement__top {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -62,13 +23,19 @@
   color: var(--primary);
   margin: 0 0 8px;
 }
+
 .logement__location {
   font-size: 18px;
   color: #555;
   margin: 0 0 16px;
 }
 
-.tags { display: flex; flex-wrap: wrap; gap: 10px; }
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 .tag {
   background: var(--primary);
   color: #fff;
@@ -78,16 +45,47 @@
   line-height: 1;
 }
 
-.logement__right { display: flex; flex-direction: column; gap: 12px; align-items: end; }
-.host { display: flex; align-items: center; gap: 10px; text-align: right; }
-.host__name { color: var(--primary); width: 90px; line-height: 1.2; }
-.host__pic {
-  width: 64px; height: 64px; border-radius: 50%; object-fit: cover; background: #ddd;
+.logement__right {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: end;
 }
 
-.rating { display: flex; gap: 6px; }
-.star { font-size: 22px; color: #e3e3e3; }
-.star--full { color: var(--primary); }
+.host {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: right;
+}
+
+.host__name {
+  color: var(--primary);
+  width: 90px;
+  line-height: 1.2;
+}
+
+.host__pic {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #ddd;
+}
+
+.rating {
+  display: flex;
+  gap: 6px;
+}
+
+.star {
+  font-size: 22px;
+  color: #e3e3e3;
+}
+
+.star--full {
+  color: var(--primary);
+}
 
 .logement__bottom {
   display: grid;
@@ -110,13 +108,20 @@
     cursor: pointer;
     position: relative;
   }
-  
-  &[open] > .collapse__head::after { transform: rotate(180deg); }
-  &__head::marker { display: none; }
+
+  &[open] > .collapse__head::after {
+    transform: rotate(180deg);
+  }
+
+  &__head::marker {
+    display: none;
+  }
+
   &__head::after {
     content: "⌄";
     position: absolute;
-    right: 16px; top: 50%;
+    right: 16px;
+    top: 50%;
     transform: translateY(-50%);
   }
 
@@ -129,48 +134,35 @@
   }
 }
 
-.equip-list { margin: 0; padding-left: 18px; }
-
-.carousel__arrow {
-  appearance: none;
-  -webkit-appearance: none;
-  border: none;
-  background: transparent;
-  width: 48px;
-  height: 48px;
-  border-radius: 9999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 32px;
-  line-height: 1;
-  color: #fff;
-  cursor: pointer;
-  outline: none;
-  
+.equip-list {
+  margin: 0;
+  padding-left: 18px;
 }
-
-.carousel__arrow:focus { outline: none; }
-.carousel__arrow:focus-visible {
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.9),
-    0 0 0 5px rgba(0, 0, 0, 0.25);
-}
-
-.carousel__arrow::-moz-focus-inner {
-  border: 0;
-}
-
 
 @media (max-width: 768px) {
-  .carousel { height: 255px; border-radius: 15px; }
-  .logement__top { grid-template-columns: 1fr; align-items: start; }
-  .logement__right { align-items: start; }
-  .logement__title { font-size: 24px; }
-  .logement__location { font-size: 14px; }
-  .logement__bottom { grid-template-columns: 1fr; }
-  .host__pic { width: 40px; height: 40px; }
+  .logement__top {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .logement__right {
+    align-items: start;
+  }
+
+  .logement__title {
+    font-size: 24px;
+  }
+
+  .logement__location {
+    font-size: 14px;
+  }
+
+  .logement__bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .host__pic {
+    width: 40px;
+    height: 40px;
+  }
 }
-
-
-
-

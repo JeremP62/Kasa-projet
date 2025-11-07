@@ -1,0 +1,80 @@
+.carousel {
+  position: relative;
+  height: 415px;
+  border-radius: 25px;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+.carousel__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+.carousel__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  background: transparent;
+  font-size: 56px;
+  line-height: 1;
+  padding: 0 12px;
+  cursor: pointer;
+  color: white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+.carousel__arrow--left {
+  left: 10px;
+}
+.carousel__arrow--right {
+  right: 10px;
+}
+.carousel__count {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  color: white;
+  font-weight: 500;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.carousel__arrow {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  background: transparent;
+  width: 48px;
+  height: 48px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  line-height: 1;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+
+.carousel__arrow:focus {
+  outline: none;
+}
+
+.carousel__arrow:focus-visible {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.9), 0 0 0 5px rgba(0, 0, 0, 0.25);
+}
+
+.carousel__arrow::-moz-focus-inner {
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  .carousel {
+    height: 255px;
+    border-radius: 15px;
+  }
+}/*# sourceMappingURL=Slideshow.css.map */

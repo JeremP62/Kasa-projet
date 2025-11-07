@@ -1,61 +1,19 @@
 // src/pages/Logement/Logement.jsx
-import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import Slideshow from "../../components/Slideshow/Slideshow";
 import "./Logement.scss";
 
 export default function Logement() {
   const logement = useLoaderData();
-  const [current, setCurrent] = useState(0);
-  const total = logement.pictures.length;
-
-  const handlePrev = () => {
-    setCurrent((prev) => (prev === 0 ? total - 1 : prev - 1));
-  };
-
-  const handleNext = () => {
-    setCurrent((prev) => (prev === total - 1 ? 0 : prev + 1));
-  };
 
   return (
     <>
-      <Header /> 
+      <Header />
 
       <div className="container">
-        <div className="carousel">
-          {total > 1 && (
-            <button
-              className="carousel__arrow carousel__arrow--left"
-              aria-label="Précédent"
-              onClick={handlePrev}
-            >
-              ‹
-            </button>
-          )}
-
-          <img
-            className="carousel__img"
-            src={logement.pictures[current]}
-            alt={`${logement.title} ${current + 1}/${total}`}
-          />
-
-          {total > 1 && (
-            <button
-              className="carousel__arrow carousel__arrow--right"
-              aria-label="Suivant"
-              onClick={handleNext}
-            >
-              ›
-            </button>
-          )}
-
-          {total > 1 && (
-            <span className="carousel__count">
-              {current + 1}/{total}
-            </span>
-          )}
-        </div>
+        <Slideshow images={logement.pictures} title={logement.title} />
 
         <div className="logement__top">
           <div className="logement__left">
@@ -78,11 +36,8 @@ export default function Logement() {
               />
             </div>
             <div className="rating">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <span
-                  key={i}
-                  className={`star ${i <= (logement.rating || 0) ? "star--full" : ""}`}
-                >
+              {[1,2,3,4,5].map((i) => (
+                <span key={i} className={`star ${i <= (logement.rating || 0) ? "star--full" : ""}`}>
                   ★
                 </span>
               ))}
@@ -100,16 +55,14 @@ export default function Logement() {
             <summary className="collapse__head">Équipements</summary>
             <div className="collapse__body">
               <ul className="equip-list">
-                {logement.equipments?.map((e) => (
-                  <li key={e}>{e}</li>
-                ))}
+                {logement.equipments?.map((e) => <li key={e}>{e}</li>)}
               </ul>
             </div>
           </details>
         </div>
       </div>
 
-      <Footer /> 
+      <Footer />
     </>
   );
 }
