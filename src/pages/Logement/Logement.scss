@@ -5,10 +5,10 @@
 }
 
 .container {
-  max-width: 1240px;
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
+  flex: 1;
 }
 
 .logement__top {
@@ -178,7 +178,7 @@
   }
 
   .logement__right {
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: flex-end;
     align-items: center;
     gap: 8px;
