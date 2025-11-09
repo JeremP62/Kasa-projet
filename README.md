@@ -1,12 +1,64 @@
-# React + Vite
+# 🏡 KASA — Application de location d’hébergements
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📘 Présentation du projet
 
-Currently, two official plugins are available:
+**Kasa** est une application web développée avec **React.js** permettant de consulter des annonces de logements.  
+Ce projet a pour objectif de reproduire le site Kasa à partir d’une maquette Figma fournie, en créant une application **dynamique, responsive et accessible**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+L’utilisateur peut :
 
-## Expanding the ESLint configuration
+- Naviguer entre les différentes pages (`Accueil`, `À propos`, `Logement`, `404`)
+- Consulter les détails d’un logement (carrousel d’images, description, équipements)
+- Explorer des sections repliables grâce à des **collapses dynamiques**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Objectifs pédagogiques
+
+- Découvrir et appliquer les **fondamentaux de React**
+- Utiliser **React Router** pour la navigation
+- Structurer un projet avec des **composants réutilisables**
+- Gérer des données dynamiques à partir d’un fichier JSON
+- Travailler la **responsivité** et l’**accessibilité**
+- Organiser les styles avec **SCSS**
+
+---
+
+## 🧱 Architecture du projet
+
+src/
+│
+├── components/
+│ ├── Header/
+│ ├── Footer/
+│ ├── Card/
+│ ├── Slideshow/
+│ └── Collapse/
+│
+├── pages/
+│ ├── Home/
+│ ├── Logement/
+│ ├── APropos/
+│ └── Error/
+│
+├── assets/
+│ ├── images/
+│ └── icons/
+│
+├── data/
+│ └── logements.json
+│
+├── App.jsx
+└── index.jsx
+
+---
+
+## ⚙️ Technologies utilisées
+
+| Outil / Lib          | Rôle                                                    |
+| -------------------- | ------------------------------------------------------- |
+| **React.js**         | Bibliothèque principale pour la création de l’interface |
+| **React Router DOM** | Gestion de la navigation entre les pages                |
+| **SCSS (Sass)**      | Gestion des styles, variables et media queries          |
+| **JavaScript**       | Logique des composants                                  |
+| **Vite**             | Environnement de développement rapide                   |

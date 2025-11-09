@@ -10,7 +10,7 @@
 }
 .carousel__img {
   width: 100%;
-  height: 100%;
+  height: 500px;
   -o-object-fit: cover;
      object-fit: cover;
   display: block;
@@ -79,11 +79,7 @@
   .carousel {
     border-radius: 15px;
   }
-}
-.carousel__img {
-  width: 100%;
-  height: 500px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  display: block;
+  .carousel__img {
+    height: 300px;
+  }
 }/*# sourceMappingURL=Slideshow.css.map */
