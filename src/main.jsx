@@ -5,9 +5,8 @@ import { router } from "./router";
 import "./index.scss";
 
 
-
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+  <RouterProvider router={router} fallbackElement={null} />
 );
 
 
