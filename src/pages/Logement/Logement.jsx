@@ -41,7 +41,7 @@ export default function Logement() {
               {[1, 2, 3, 4, 5].map((i) => (
                 <span
                   key={i}
-                  className={`star ${i <= Number(logement.rating || 0) ? "star--full" : ""}`}
+                  className={`star ${i <= Number(logement.rating || 0) ? "star--full" : ""}`} /*Si étoile inférieur ou égal à la note du logement */
                 >
                   ★
                 </span>
